@@ -1,0 +1,1 @@
+This is a [gatsbyjs](https://www.gatsbyjs.com/) project with [tailwind-css](https://tailwindcss.com/), inspired from udemy course [Gatsby V3 Tutorial and Projects Course](https://www.udemy.com/course/gatsby-tutorial-and-projects-course).

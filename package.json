@@ -1,0 +1,52 @@
+{
+  "name": "simply-recipes",
+  "private": true,
+  "description": "Demo gatsby website with typescript and tailwindcss",
+  "version": "1.0.0", 
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint src",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "gatsby": "3.12.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "16.6.1",
+    "@types/react": "17.0.18",
+    "@types/react-dom": "17.0.9",
+    "autoprefixer": "10.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.24.0",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "gatsby-plugin-postcss": "4.12.0",
+    "gatsby-plugin-typescript": "3.12.0",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
+    "postcss": "8.3.6",
+    "prettier": "2.3.2",
+    "tailwindcss": "2.2.7",
+    "typescript": "4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmichelogiannakis/simply-recipes"
+  },
+  "bugs": {
+    "url": "https://github.com/tmichelogiannakis/simply-recipes/issues"
+  }
+}
