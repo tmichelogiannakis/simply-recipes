@@ -14,7 +14,7 @@ const Navbar = (): JSX.Element => {
           </Link>
         </div>
         <div>
-          <Link to="/about">About</Link>
+          <Link to="/about">About</Link> <Link to="/tags">Tags</Link>
         </div>
       </div>
     </nav>
