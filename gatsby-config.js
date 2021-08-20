@@ -10,6 +10,13 @@ module.exports = {
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp'
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Roboto:wght@400;700'],
+        display: 'swap'
+      }
+    }
   ]
 };
