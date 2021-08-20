@@ -2,6 +2,7 @@ import { Link, GatsbyLinkProps } from 'gatsby';
 import { FC, MouseEvent, useState, useEffect } from 'react';
 import { useLocation } from '@reach/router';
 import { FiMenu } from 'react-icons/fi';
+import logo from '../../assets/images/logo.svg';
 
 const MenuItem: FC<Omit<GatsbyLinkProps<unknown>, 'ref'>> = ({
   children,
@@ -48,7 +49,7 @@ const Navbar = (): JSX.Element => {
             <div className="flex items-center justify-between flex-shrink-0 w-full py-3 md:w-auto md:py-0">
               <Link to="/">
                 <span className="sr-only">Simply recipes home page</span>
-                <img src="logo.svg" alt="simply recipes" />
+                <img src={logo} alt="simply recipes" />
               </Link>
               <button
                 className="p-2 text-2xl bg-indigo-700 hover:bg-indigo-600 text-white md:hidden"

@@ -6,7 +6,7 @@ const About = (): JSX.Element => {
     <div className="flex flex-wrap -mx-4">
       <div className="px-4 w-full md:w-2/4 md:order-2">
         <StaticImage
-          src="../assets/about.jpeg"
+          src="../assets/images/about.jpeg"
           alt="Person Pouring Salt in Bowl"
           placeholder="blurred"
           className="h-96"
