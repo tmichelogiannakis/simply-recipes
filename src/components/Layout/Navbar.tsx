@@ -10,7 +10,7 @@ const MenuItem: FC<Omit<GatsbyLinkProps<unknown>, 'ref'>> = ({
   return (
     <Link
       activeClassName="text-indigo-700"
-      className="leading-none capitalize text-xl text-black hover:text-indigo-600 border-t py-3 px-4 text-center block w-full md:py-2 md:w-auto md:text-base md:border-t-0 md:inline-block"
+      className="leading-none capitalize text-base text-black hover:text-indigo-600 border-t py-3 px-4 text-center block w-full md:py-2 md:w-auto md:border-t-0 md:inline-block"
       {...linkProps}
     >
       {children}
@@ -37,7 +37,7 @@ const Navbar = (): JSX.Element => {
     <div
       className={`${
         opended ? 'fixed overflow-auto h-screen' : ''
-      } w-screen bg-white md:static md:h-auto md:py-2`}
+      } w-full bg-white md:static md:h-auto md:py-4`}
     >
       <div className="max-w-screen-xl px-4 mx-auto">
         <nav className="navbar">
@@ -68,9 +68,9 @@ const Navbar = (): JSX.Element => {
                 <MenuItem to="/tags">tags</MenuItem>
                 <MenuItem to="/about">about</MenuItem>
               </div>
-              <div className="border-t py-3 text-center block w-full md:w-auto md:text-base md:border-t-0 md:inline-block md:py-0">
+              <div className="border-t py-3 text-center block w-full md:w-auto md:border-t-0 md:inline-block md:py-0">
                 <Link
-                  className="inline-block rounded capitalize py-2 px-4 leading-none bg-indigo-700 hover:bg-indigo-600 text-white text-xl md:text-base"
+                  className="inline-block rounded capitalize py-3 px-4 leading-none bg-indigo-700 hover:bg-indigo-600 text-white text-base"
                   to="/contact"
                 >
                   contact

@@ -1,13 +1,5 @@
-import Layout from '../components/Layout/Layout';
-
 const About = (): JSX.Element => {
-  return (
-    <Layout>
-      <div className="container mx-auto">
-        <h1>About!</h1>
-      </div>
-    </Layout>
-  );
+  return <h1>About!</h1>;
 };
 
 export default About;
