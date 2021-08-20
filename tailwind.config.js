@@ -5,7 +5,12 @@ module.exports = {
     fontFamily: {
       sans: ['Roboto']
     },
-    extend: {}
+
+    extend: {
+      height: {
+        'screen-40': '40vh'
+      }
+    }
   },
   variants: {
     extend: {}

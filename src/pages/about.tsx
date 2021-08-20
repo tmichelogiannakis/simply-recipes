@@ -9,7 +9,7 @@ const About = (): JSX.Element => {
           src="../assets/images/about.jpeg"
           alt="Person Pouring Salt in Bowl"
           placeholder="blurred"
-          className="h-96"
+          className="h-96 rounded"
         />
       </div>
       <div className="px-4 py-4 w-full md:py-0 md:w-2/4 md:order-1">
