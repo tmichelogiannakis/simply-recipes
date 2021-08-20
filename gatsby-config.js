@@ -7,6 +7,9 @@ module.exports = {
       options: {
         component: require.resolve('./src/components/Layout/Layout.tsx')
       }
-    }
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp'
   ]
 };
