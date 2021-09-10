@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-gray-100;
+    @apply text-gray-700;
+  }
+
   p {
-    @apply text-base;
-    @apply leading-normal;
+    @apply text-lg;
+    @apply leading-relaxed;
     @apply my-4;
   }
 }

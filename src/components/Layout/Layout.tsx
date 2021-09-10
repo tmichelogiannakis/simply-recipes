@@ -6,7 +6,7 @@ const Layout: FC = ({ children }): JSX.Element => {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-initial order-2 flex-grow">
-        <div className="max-w-screen-xl mx-auto px-4">{children}</div>
+        <div className="max-w-screen-xl mx-auto p-4">{children}</div>
       </div>
       <div className="flex-initial order-1">
         <Navbar />
