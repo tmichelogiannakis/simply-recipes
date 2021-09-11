@@ -1,5 +1,12 @@
+import Seo from '../components/Seo/Seo';
+
 const Tags = (): JSX.Element => {
-  return <h1>Tags!</h1>;
+  return (
+    <>
+      <Seo title="Contact" />
+      <h1>Tags!</h1>
+    </>
+  );
 };
 
 export default Tags;

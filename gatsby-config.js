@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Simply Recipes',
+    description: 'Nice and clean recipes site'
+  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-postcss',
