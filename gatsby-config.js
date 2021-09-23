@@ -32,6 +32,12 @@ module.exports = {
         fonts: ['Roboto:wght@400;700'],
         display: 'swap'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        documentPaths: ['./src/**/*.{ts,tsx}']
+      }
     }
   ]
 };
