@@ -11,7 +11,7 @@ const MenuItem: FC<Omit<GatsbyLinkProps<unknown>, 'ref'>> = ({
   return (
     <Link
       activeClassName="text-indigo-700"
-      className="leading-none capitalize text-base text-black hover:text-indigo-600 border-t py-3 px-4 text-center block w-full md:py-2 md:w-auto md:border-t-0 md:inline-block"
+      className="leading-none capitalize text-base text-black font-bold hover:text-indigo-600 border-t py-3 px-4 text-center block w-full md:py-2 md:w-auto md:border-t-0 md:inline-block"
       {...linkProps}
     >
       {children}

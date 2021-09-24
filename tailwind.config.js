@@ -3,12 +3,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['Roboto']
+      body: ['Libre Baskerville']
     },
-
     extend: {
       height: {
         'screen-40': '40vh'
+      },
+      gridTemplateColumns: {
+        recipes: '200px 1fr'
       }
     }
   },

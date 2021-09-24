@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Roboto:wght@400;700'],
+        fonts: ['Libre+Baskerville:wght@400;700'],
         display: 'swap'
       }
     },
