@@ -1,4 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import AllRecipes from '../components/AllRecipes/AllRecipes';
 import Seo from '../components/Seo/Seo';
 
 const Home = (): JSX.Element => {
@@ -20,6 +21,7 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </header>
+      <AllRecipes />
     </>
   );
 };

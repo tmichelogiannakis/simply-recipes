@@ -38,7 +38,7 @@ const TagsList = ({ recipes }: TagsListProps): JSX.Element => {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1">
         {newTags.map(([tag, value], index) => {
           return (
-            <Link to="tags" key={index} className="capitalize leading-loose">
+            <Link to="/tags" key={index} className="capitalize leading-loose">
               {tag} ({value})
             </Link>
           );

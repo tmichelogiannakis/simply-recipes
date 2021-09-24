@@ -16,7 +16,7 @@ const About = (): JSX.Element => {
           />
         </div>
         <div className="px-4 py-4 w-full md:py-0 md:w-2/4 md:order-1">
-          <h1 className="text-4xl leading-snug">
+          <h1 className="text-4xl leading-tight">
             I&apos;m baby coloring book poke taxidermy
           </h1>
           <p>
