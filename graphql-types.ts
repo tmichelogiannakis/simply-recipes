@@ -5191,3 +5191,8 @@ export type FetchRecipesQuery = { allContentfulRecipe: { nodes: Array<(
       Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'prepTime'>
       & { content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
     )> } };
+
+export type FetchRecipesTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FetchRecipesTagsQuery = { allContentfulRecipe: { nodes: Array<{ content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>> }> } };

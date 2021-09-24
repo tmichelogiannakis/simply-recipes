@@ -30,7 +30,7 @@ const Recipes = (): JSX.Element => {
   return (
     <>
       <Seo title="Recipes" />
-      <h1 className="text-center text-4xl mb-4">Recipes!</h1>
+      <h1 className="text-center text-4xl mt-4 mb-8">Recipes!</h1>
       <RecipesComponent recipes={recipes} />
     </>
   );
