@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
-import { FetchAllRecipesQuery } from '../../../graphql-types';
+import { FetchRecipesQuery } from '../../../graphql-types';
 
 const setupTags = (
-  recipes: FetchAllRecipesQuery['allContentfulRecipe']['nodes']
+  recipes: FetchRecipesQuery['allContentfulRecipe']['nodes']
 ): [string, number][] => {
   const allTags: { [key: string]: number } = {};
   for (const recipe of recipes) {
@@ -27,14 +27,13 @@ const setupTags = (
 };
 
 type TagsListProps = {
-  recipes: FetchAllRecipesQuery['allContentfulRecipe']['nodes'];
+  recipes: FetchRecipesQuery['allContentfulRecipe']['nodes'];
 };
 
 const TagsList = ({ recipes }: TagsListProps): JSX.Element => {
   const newTags = setupTags(recipes);
   return (
     <div>
-      <h2 className="text-2xl font-normal mb-4">Recipes</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1">
         {newTags.map(([tag, value], index) => {
           return (

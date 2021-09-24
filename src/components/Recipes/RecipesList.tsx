@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
-import { FetchAllRecipesQuery } from '../../../graphql-types';
+import { FetchRecipesQuery } from '../../../graphql-types';
 
 type RecipesListProps = {
-  recipes: FetchAllRecipesQuery['allContentfulRecipe']['nodes'];
+  recipes: FetchRecipesQuery['allContentfulRecipe']['nodes'];
 };
 
 const RecipesList = ({ recipes = [] }: RecipesListProps): JSX.Element => {

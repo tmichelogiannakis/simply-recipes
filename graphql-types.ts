@@ -248,6 +248,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -1074,6 +1076,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2186,6 +2190,8 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2319,6 +2325,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5163,15 +5171,23 @@ export type ContentfulContentTypeSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type FetchAllRecipesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type FetchAllRecipesQuery = { allContentfulRecipe: { nodes: Array<(
-      Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'prepTime'>
-      & { content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-    )> } };
-
 export type FetchSiteMetataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type FetchSiteMetataQuery = { site?: Maybe<{ metadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+export type FetchFeauteredRecipesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FetchFeauteredRecipesQuery = { allContentfulRecipe: { nodes: Array<(
+      Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'prepTime'>
+      & { content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+    )> } };
+
+export type FetchRecipesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FetchRecipesQuery = { allContentfulRecipe: { nodes: Array<(
+      Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'prepTime'>
+      & { content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+    )> } };

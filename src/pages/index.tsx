@@ -1,8 +1,36 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import AllRecipes from '../components/AllRecipes/AllRecipes';
 import Seo from '../components/Seo/Seo';
+import { FetchFeauteredRecipesQuery } from '../../graphql-types';
+import Recipes from '../components/Recipes/Recipes';
+
+export const query = graphql`
+  query FetchFeauteredRecipes {
+    allContentfulRecipe(
+      sort: { fields: title, order: ASC }
+      filter: { featured: { eq: true } }
+    ) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        content {
+          tags
+        }
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
 
 const Home = (): JSX.Element => {
+  const {
+    allContentfulRecipe: { nodes: recipes }
+  } = useStaticQuery<FetchFeauteredRecipesQuery>(query);
+
   return (
     <>
       <Seo title="Home" />
@@ -21,7 +49,7 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </header>
-      <AllRecipes />
+      <Recipes title=" Look At This Awesomesouce!" recipes={recipes} />
     </>
   );
 };
