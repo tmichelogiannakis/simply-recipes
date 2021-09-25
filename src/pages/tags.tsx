@@ -46,7 +46,3 @@ const Tags = (): JSX.Element => {
 };
 
 export default Tags;
-
-/* transition: var(--transition);
-padding: .75rem 0;
-}  */

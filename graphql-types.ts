@@ -296,8 +296,19 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContext = {
+  id?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  _xparams?: Maybe<SitePageContext_Xparams>;
+};
+
+export type SitePageContext_Xparams = {
+  title?: Maybe<Scalars['String']>;
 };
 
 export type SitePlugin = Node & {
@@ -856,6 +867,7 @@ export type ContentfulRecipe = ContentfulReference & ContentfulEntry & Node & {
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulRecipeSys>;
+  gatsbyPath?: Maybe<Scalars['String']>;
   /** Returns all children nodes filtered by type contentfulRecipeDescriptionTextNode */
   childrenContentfulRecipeDescriptionTextNode?: Maybe<Array<Maybe<ContentfulRecipeDescriptionTextNode>>>;
   /** Returns the first child node of type contentfulRecipeDescriptionTextNode or null if there are no children of given type on this node */
@@ -883,6 +895,11 @@ export type ContentfulRecipeUpdatedAtArgs = {
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulRecipeGatsbyPathArgs = {
+  filePath?: Maybe<Scalars['String']>;
 };
 
 export type ContentfulRecipeSys = {
@@ -1129,6 +1146,7 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
 };
@@ -1268,6 +1286,7 @@ export type QueryContentfulRecipeArgs = {
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulRecipeSysFilterInput>;
+  gatsbyPath?: Maybe<StringQueryOperatorInput>;
   childrenContentfulRecipeDescriptionTextNode?: Maybe<ContentfulRecipeDescriptionTextNodeFilterListInput>;
   childContentfulRecipeDescriptionTextNode?: Maybe<ContentfulRecipeDescriptionTextNodeFilterInput>;
   childrenContentfulRecipeContentJsonNode?: Maybe<ContentfulRecipeContentJsonNodeFilterListInput>;
@@ -2540,6 +2559,16 @@ export type SiteFunctionSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  _xparams?: Maybe<SitePageContext_XparamsFilterInput>;
+};
+
+export type SitePageContext_XparamsFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginFilterInput = {
   resolve?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
@@ -2759,6 +2788,9 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
+  | 'context___title'
+  | 'context____xparams___title'
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
@@ -2896,6 +2928,7 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
 };
@@ -4283,6 +4316,7 @@ export type ContentfulRecipeFieldsEnum =
   | 'sys___contentType___sys___type'
   | 'sys___contentType___sys___linkType'
   | 'sys___contentType___sys___id'
+  | 'gatsbyPath'
   | 'childrenContentfulRecipeDescriptionTextNode'
   | 'childrenContentfulRecipeDescriptionTextNode___id'
   | 'childrenContentfulRecipeDescriptionTextNode___parent___id'
@@ -4594,6 +4628,7 @@ export type ContentfulRecipeFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulRecipeSysFilterInput>;
+  gatsbyPath?: Maybe<StringQueryOperatorInput>;
   childrenContentfulRecipeDescriptionTextNode?: Maybe<ContentfulRecipeDescriptionTextNodeFilterListInput>;
   childContentfulRecipeDescriptionTextNode?: Maybe<ContentfulRecipeDescriptionTextNodeFilterInput>;
   childrenContentfulRecipeContentJsonNode?: Maybe<ContentfulRecipeContentJsonNodeFilterListInput>;
@@ -5196,3 +5231,13 @@ export type FetchRecipesTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type FetchRecipesTagsQuery = { allContentfulRecipe: { nodes: Array<{ content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags'>> }> } };
+
+export type FetchRecipeQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type FetchRecipeQuery = { contentfulRecipe?: Maybe<(
+    Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'servings' | 'featured' | 'prepTime'>
+    & { description?: Maybe<Pick<ContentfulRecipeDescriptionTextNode, 'description'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>>, content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags' | 'tools' | 'ingredients' | 'instructions'>> }
+  )> };

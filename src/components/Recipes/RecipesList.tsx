@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import slugify from 'slugify';
 import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
 import { FetchRecipesQuery } from '../../../graphql-types';
 
@@ -13,9 +14,10 @@ const RecipesList = ({ recipes = [] }: RecipesListProps): JSX.Element => {
         const { id, title, image, prepTime, cookTime } = recipe;
         if (image && title) {
           const pathToImage = getImage(image as ImageDataLike);
+          const slug = slugify(title, { lower: true });
           return (
             <article key={id}>
-              <Link to="/">
+              <Link to={`/${slug}`}>
                 {pathToImage && (
                   <GatsbyImage
                     image={pathToImage}
