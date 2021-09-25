@@ -23,6 +23,7 @@ const Contact = (): JSX.Element => {
               className="form contact-form"
               name="contact"
               method="POST"
+              netlify-honeypot="bot-field"
               data-netlify="true"
             >
               <div className="hidden">
