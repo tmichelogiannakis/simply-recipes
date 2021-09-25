@@ -1,10 +1,6 @@
-import { FormEvent } from 'react';
 import Seo from '../components/Seo/Seo';
 
 const Contact = (): JSX.Element => {
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-  };
   return (
     <>
       <Seo title="Contact" />
@@ -23,7 +19,12 @@ const Contact = (): JSX.Element => {
         </div>
         <div className="px-4 w-full md:w-2/4 ">
           <div className="py-8 px-10 bg-white shadow rounded">
-            <form className="form contact-form" onSubmit={handleSubmit}>
+            <form
+              className="form contact-form"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+            >
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm capitalize mb-2">
                   your name
