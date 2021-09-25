@@ -25,6 +25,12 @@ const Contact = (): JSX.Element => {
               method="POST"
               data-netlify="true"
             >
+              <div className="hidden">
+                <label>
+                  Don’t fill this out if you’re human:{' '}
+                  <input name="bot-field" />
+                </label>
+              </div>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm capitalize mb-2">
                   your name
