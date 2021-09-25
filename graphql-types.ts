@@ -302,6 +302,7 @@ export type SitePage = Node & {
 };
 
 export type SitePageContext = {
+  tag?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   _xparams?: Maybe<SitePageContext_Xparams>;
@@ -2560,6 +2561,7 @@ export type SiteFunctionSortInput = {
 };
 
 export type SitePageContextFilterInput = {
+  tag?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   _xparams?: Maybe<SitePageContext_XparamsFilterInput>;
@@ -2788,6 +2790,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___tag'
   | 'context___id'
   | 'context___title'
   | 'context____xparams___title'

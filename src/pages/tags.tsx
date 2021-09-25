@@ -1,4 +1,5 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
+import slugify from 'slugify';
 import { FetchRecipesTagsQuery } from '../../graphql-types';
 import Seo from '../components/Seo/Seo';
 import setupTags from '../utils/setup-tags';
@@ -31,7 +32,7 @@ const Tags = (): JSX.Element => {
           const [text, value] = tag;
           return (
             <Link
-              to="/tags"
+              to={`/tags/${slugify(text, { lower: true })}`}
               key={index}
               className="bg-gray-500 rounded text-center text-white py-4 hover:bg-indigo-700 transition ease-in-out duration-300"
             >
