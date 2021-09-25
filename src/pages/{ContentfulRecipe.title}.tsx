@@ -22,7 +22,7 @@ export const query = graphql`
       }
       servings
       image {
-        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
       }
       featured
       prepTime
@@ -84,9 +84,10 @@ const Recipe = (
             <div>
               <span className="font-bold text-sm mr-1">Tags:</span>
               {tags.map(
-                tag =>
+                (tag, index) =>
                   tag && (
                     <a
+                      key={index}
                       href={`/tags/${slugify(tag)}`}
                       className="inline-block px-2 py-1 mx-1 bg-indigo-700 text-white leading-none rounded"
                     >

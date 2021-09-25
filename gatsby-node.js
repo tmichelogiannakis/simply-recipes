@@ -16,15 +16,21 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // create a set of tags
+  const tags = new Set();
   result.data.allContentfulRecipe.nodes.forEach(recipe => {
     recipe.content.tags.forEach(tag => {
-      createPage({
-        path: `/tags/${slugify(tag, { lower: true })}`,
-        component: path.resolve('src/templates/tag-template.tsx'),
-        context: {
-          tag: tag
-        }
-      });
+      tags.add(tag);
+    });
+  });
+  // Iterate over set tags
+  Array.from(tags).forEach(tag => {
+    createPage({
+      path: `/tags/${slugify(tag, { lower: true })}`,
+      component: path.resolve('src/templates/tag-template.tsx'),
+      context: {
+        tag: tag
+      }
     });
   });
 };

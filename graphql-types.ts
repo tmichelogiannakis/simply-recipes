@@ -5244,3 +5244,13 @@ export type FetchRecipeQuery = { contentfulRecipe?: Maybe<(
     Pick<ContentfulRecipe, 'id' | 'title' | 'cookTime' | 'servings' | 'featured' | 'prepTime'>
     & { description?: Maybe<Pick<ContentfulRecipeDescriptionTextNode, 'description'>>, image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>>, content?: Maybe<Pick<ContentfulRecipeContentJsonNode, 'tags' | 'tools' | 'ingredients' | 'instructions'>> }
   )> };
+
+export type FetchRecipesByTagQueryVariables = Exact<{
+  tag?: Maybe<Scalars['String']>;
+}>;
+
+
+export type FetchRecipesByTagQuery = { allContentfulRecipe: { nodes: Array<(
+      Pick<ContentfulRecipe, 'title' | 'id' | 'cookTime' | 'prepTime'>
+      & { image?: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+    )> } };

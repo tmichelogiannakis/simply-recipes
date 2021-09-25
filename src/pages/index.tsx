@@ -19,7 +19,7 @@ export const query = graphql`
           tags
         }
         image {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
         }
       }
     }
