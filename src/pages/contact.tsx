@@ -23,7 +23,7 @@ const Contact = (): JSX.Element => {
               className="form contact-form"
               name="contact"
               method="POST"
-              netlify-honeypot="bot-field"
+              data-netlify-honeypot="bot-field"
               data-netlify="true"
             >
               <div className="hidden">
@@ -32,6 +32,7 @@ const Contact = (): JSX.Element => {
                   <input name="bot-field" />
                 </label>
               </div>
+              <input type="hidden" name="form-name" value="contact" />
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm capitalize mb-2">
                   your name
